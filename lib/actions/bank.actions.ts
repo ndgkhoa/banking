@@ -106,13 +106,14 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
             appwriteItemId: bank.$id,
         }
 
-        // const allTransactions = [...transactions, ...transferTransactions].sort(
-        //     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-        // )
+        //const allTransactions = [...transactions, ...transferTransactions]
+        const allTransactions = [...transactions].sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+        )
 
         return parseStringify({
             data: account,
-            // transactions: allTransactions,
+            transactions: allTransactions,
         })
     } catch (error) {
         console.error('An error occurred while getting the account:', error)
