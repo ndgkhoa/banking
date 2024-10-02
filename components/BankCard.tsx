@@ -1,7 +1,7 @@
 import { formatAmount } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
-// import Copy from './Copy'
+import Copy from './copy'
 
 const BankCard = ({
     account,
@@ -65,7 +65,7 @@ const BankCard = ({
                 />
             </Link>
 
-            {/* {showBalance && <Copy title={account?.sharaebleId} />} */}
+            {showBalance && <Copy title={account?.shareableId} />}
         </div>
     )
 }
